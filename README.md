@@ -1,8 +1,8 @@
 # 此为linux版本的，使用dl库，统一API，链接不同的实现方式的动态库的demo
 
-# 源码存放在loadlibdemo下
+## 源码存放在loadlibdemo下
 
-# 目录结构如下：
+## 目录结构如下：
 
 realfun.h 
 是统一的API接口名称
@@ -16,18 +16,23 @@ demo.cpp
 
 loadlibdemo/demolib1
 是实现realfun.h的功能的实例动态库1
+（libdemolibone.so 其实就是这个实例生成的动态库，用于测试）
 
 loadlibdemo/demolib1
 是实现realfun.h的功能的实例动态库2
+（libdemolibtwo.so 其实就是这个实例生成的动态库，用于测试）
 
-# 注意事项
+## 注意事项
 
-根据目前的使用来看，需要注意的有两点
+根据目前的使用来看，需要注意的有三点
 
 1. 统一API的时候，在头文件里，需要对要导出的API，用“extern c"
 
 2. 另外就是，可以动态加载的，需要封装成动态库
 
-# PS：
+3. 这个示例代码，仅在linux平台下生效，因为链接的dl库，头文件是#include <dlfcn.h>，这些是linux平台的；
+   windows下用Kernel32.lib库，头文件是Windows.h；
+
+## PS：
 
 如有描述不对之处，欢迎大家指正 
